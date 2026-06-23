@@ -30,6 +30,12 @@ Then open `http://127.0.0.1:8098/`.
 
 The repository root is ready for Cloudflare Pages Direct Upload or Git integration. No build command is required; the output directory is the repository root.
 
+## Project documentation
+
+- [`DESIGN_RULES.md`](DESIGN_RULES.md) defines the protected visual system, content principles and technical constraints.
+- [`TASKS.md`](TASKS.md) records the prioritised roadmap and should be updated with each relevant commit.
+- [`META-INTEGRATION.md`](META-INTEGRATION.md) describes the production requirements for approved Facebook and Instagram publishing.
+
 ## Event Studio
 
 `admin.html` demonstrates event submission, poster preview, editorial approval, website publication, social captions and Facebook/Instagram previews. Approved demonstration events use browser storage.
