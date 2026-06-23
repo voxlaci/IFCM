@@ -28,7 +28,14 @@ Then open `http://127.0.0.1:8098/`.
 
 ## Deploy
 
-The repository root is ready for Cloudflare Pages Direct Upload or Git integration. No build command is required; the output directory is the repository root.
+The prototype is published with Cloudflare Pages from the GitHub repository `voxlaci/IFCM`.
+
+- Public preview: <https://ifcm.pages.dev/>
+- Production branch: `main`
+- Build command: none
+- Build output directory: `/`
+
+Every pushed commit to `main` can trigger a new Cloudflare Pages deployment.
 
 ## Project documentation
 

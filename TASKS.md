@@ -7,8 +7,8 @@ Last reviewed: 23 June 2026
 - [x] Establish `voxlaci/IFCM` as the principal repository.
 - [x] Create the initial local Git history.
 - [x] Authenticate GitHub CLI and push the initial commits to `main`.
-- [ ] Connect the GitHub repository to Cloudflare Pages.
-- [ ] Confirm the public `pages.dev` address.
+- [x] Connect the GitHub repository to Cloudflare Pages.
+- [x] Confirm the public `pages.dev` address: https://ifcm.pages.dev/.
 - [ ] Add a custom domain or subdomain when selected.
 - [ ] Verify HTTPS, redirects, caching and mobile rendering after deployment.
 
