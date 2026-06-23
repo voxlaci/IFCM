@@ -185,15 +185,15 @@ h1 em, h2 em { color: var(--lime); font-family: Georgia, serif; font-weight: 400
 .presidents-heading > div:last-child > p { max-width: 520px; color: rgba(255,255,255,.66); }
 .president-navigation { display: flex; gap: 8px; margin-top: 24px; }
 .president-navigation button { width: 46px; height: 46px; border: 1px solid rgba(255,255,255,.25); border-radius: 50%; background: transparent; color: white; font-size: 20px; cursor: pointer; }
-.presidents-rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 23vw); gap: 18px; overflow-x: auto; padding: 4px 1px 26px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
-.president-card { position: relative; min-height: 470px; overflow: hidden; border-radius: 4px; background: #202026; scroll-snap-align: start; }
-.president-card img { width: 100%; height: 285px; display: block; object-fit: cover; object-position: center 25%; filter: saturate(.82) contrast(1.03); }
-.president-card > div { padding: 24px; }
+.presidents-rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(218px, 19vw); gap: 18px; overflow-x: auto; padding: 4px 1px 26px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.president-card { position: relative; min-height: 348px; overflow: hidden; border-radius: 4px; background: #202026; scroll-snap-align: start; }
+.president-card img { width: 100%; height: 148px; display: block; object-fit: cover; object-position: center 22%; filter: saturate(.78) contrast(1.02); }
+.president-card > div { padding: 18px; }
 .president-card span { color: var(--lime); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.president-card h3 { margin: 10px 0 5px; font-family: var(--display); font-size: 27px; line-height: 1; letter-spacing: -.035em; }
-.president-card p { margin: 0 0 18px; color: rgba(255,255,255,.58); }
-.president-card small { display: block; color: rgba(255,255,255,.75); line-height: 1.5; }
-.president-card.current::after { content: "CURRENT"; position: absolute; top: 18px; right: 18px; padding: 7px 10px; background: var(--lime); color: var(--ink); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.president-card h3 { margin: 10px 0 5px; font-family: var(--display); font-size: 22px; line-height: 1; letter-spacing: -.035em; }
+.president-card p { margin: 0 0 12px; color: rgba(255,255,255,.58); }
+.president-card small { display: block; color: rgba(255,255,255,.75); line-height: 1.45; font-size: 12px; }
+.president-card.current::after { content: "CURRENT"; position: absolute; top: 12px; right: 12px; padding: 6px 8px; background: var(--lime); color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: .12em; }
 .president-card.acting span { color: var(--coral); }
 .president-card.founder { background: var(--coral); }
 .president-card.founder span, .president-card.founder p, .president-card.founder small { color: var(--ink); }
@@ -591,9 +591,9 @@ footer > div:last-child span { color: rgba(255,255,255,.42); }
 .contact-social { flex-direction: row!important; flex-wrap: wrap; align-items: flex-end; gap: 12px 24px; }
 .contact-social small,.contact-social h3,.contact-social p { width: 100%; }.contact-social h3 { margin-top: auto; }
 .concierge-launcher { position: fixed; z-index: 90; right: 22px; bottom: 20px; padding: 13px 17px; display: flex; gap: 9px; align-items: center; border: 0; border-radius: 100px; color: var(--deep); background: var(--lime); box-shadow: 0 12px 35px rgba(0,0,0,.22); cursor: pointer; }
-.share-launcher { position: fixed; z-index: 89; right: 160px; bottom: 20px; padding: 13px 17px; display: flex; gap: 8px; align-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 100px; color: white; background: var(--deep); box-shadow: 0 12px 35px rgba(0,0,0,.18); cursor: pointer; }
+.share-launcher { position: fixed; z-index: 89; left: 22px; bottom: 20px; padding: 13px 17px; display: flex; gap: 8px; align-items: center; border: 1px solid rgba(255,255,255,.25); border-radius: 100px; color: white; background: var(--deep); box-shadow: 0 12px 35px rgba(0,0,0,.18); cursor: pointer; }
 .share-launcher svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.share-panel { position: fixed; z-index: 108; right: 160px; bottom: 76px; width: 210px; padding: 16px; display: flex; flex-direction: column; gap: 5px; background: var(--white); box-shadow: 0 18px 55px rgba(0,0,0,.25); visibility: hidden; opacity: 0; transform: translateY(8px); transition: .2s; }
+.share-panel { position: fixed; z-index: 108; left: 22px; bottom: 76px; width: 210px; padding: 16px; display: flex; flex-direction: column; gap: 5px; background: var(--white); box-shadow: 0 18px 55px rgba(0,0,0,.25); visibility: hidden; opacity: 0; transform: translateY(8px); transition: .2s; }
 .share-panel.open { visibility: visible; opacity: 1; transform: none; }
 .share-panel strong { margin-bottom: 6px; font-family: var(--display); }
 .share-panel a,.share-panel button { padding: 9px 10px; border: 0; color: var(--ink); background: var(--paper); text-align: left; font-size: 10px; cursor: pointer; }
@@ -687,7 +687,7 @@ footer > div:last-child span { color: rgba(255,255,255,.42); }
   .live-card { width: 170px; padding: 16px; }
   .scroll-cue { display: none; }
   .manifesto-strip { margin-bottom: -100px; margin-left: -30px; margin-right: -30px; }
-  .presidents-rail { grid-auto-columns: minmax(245px, 82vw); }
+  .presidents-rail { grid-auto-columns: minmax(218px, 76vw); }
   .legacy-options { grid-template-columns: 1fr; }
   .legacy-options article { min-height: 130px; }
   .priority button { grid-template-columns: 42px 1fr auto; }
@@ -735,8 +735,8 @@ footer > div:last-child span { color: rgba(255,255,255,.42); }
   .newsletter-form > div { grid-template-columns: 1fr; }
   .newsletter-form button { min-height: 52px; }
   .concierge { right: 14px; bottom: 72px; }
-  .share-launcher { right: auto; left: 14px; padding: 13px 15px; }
-  .share-panel { right: auto; left: 14px; }
+  .share-launcher { left: 14px; padding: 13px 15px; }
+  .share-panel { left: 14px; }
   .ambassador-card { left: 10px; bottom: 15px; width: calc(100% - 20px); }
   .globe-motion { right: 10px; top: 10px; }
   .contact-cards { grid-template-columns: 1fr; }

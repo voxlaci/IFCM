@@ -34,7 +34,7 @@ Last reviewed: 23 June 2026
 
 ## Priority 1 — Visual quality
 
-- [ ] Reduce president portrait dimensions to avoid visible pixelation.
+- [x] Reduce president portrait dimensions to avoid visible pixelation.
 - [ ] Locate higher-resolution authorised president portraits where available.
 - [ ] Check cropping and focal position for every portrait.
 - [ ] Optimise large Earth and hero images for web delivery.
