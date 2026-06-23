@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>IFCM Event Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <a href="index.html" class="admin-brand"><img src="assets/ifcm-logo.png" alt="IFCM"><span>Event Studio</span></a>
+    <nav><a href="#submit">Submit event</a><a href="#queue">Approval queue</a><a href="#integration">Integration</a><a href="index.html">View site ↗</a></nav>
+  </header>
+
+  <main>
+    <section class="admin-hero">
+      <div><p>IFCM PUBLISHING WORKFLOW</p><h1>One approval.<br><em>Every channel.</em></h1></div>
+      <p>Submit once, review carefully, then publish to the IFCM calendar, Facebook and Instagram from one controlled workflow.</p>
+    </section>
+
+    <section class="workflow">
+      <article><span>01</span><strong>Submit</strong><p>Event details, poster, links and rights confirmation.</p></article>
+      <article><span>02</span><strong>Review</strong><p>An IFCM editor checks accuracy, quality and permissions.</p></article>
+      <article><span>03</span><strong>Approve</strong><p>Preview the website, Facebook and Instagram versions.</p></article>
+      <article><span>04</span><strong>Publish</strong><p>Send immediately or schedule all approved channels.</p></article>
+    </section>
+
+    <section class="event-composer" id="submit">
+      <div class="composer-form">
+        <p class="section-label">New event submission</p>
+        <h2>Create once.<br>Publish everywhere.</h2>
+        <form id="event-form">
+          <div class="form-grid">
+            <label class="wide">Event title<input name="title" required placeholder="International Choral Festival…"></label>
+            <label>Start date<input name="startDate" type="date" required></label>
+            <label>End date<input name="endDate" type="date" required></label>
+            <label>City<input name="city" required placeholder="Lisbon"></label>
+            <label>Country<input name="country" required placeholder="Portugal"></label>
+            <label>Event type<select name="type"><option value="festival">Festival</option><option value="competition">Competition</option><option value="learning">Workshop / Learning</option><option value="concert">Concert</option><option value="online">Online</option></select></label>
+            <label>Event website<input name="url" type="url" placeholder="https://…"></label>
+            <label class="wide">Short description<textarea name="description" rows="4" required placeholder="What makes this event relevant to the international choral community?"></textarea></label>
+            <label class="wide">Facebook / Instagram caption<textarea name="caption" rows="4" placeholder="Leave blank to generate it from the event details."></textarea></label>
+            <label class="wide poster-field">Event poster<input id="poster-input" name="poster" type="file" accept="image/png,image/jpeg,image/webp"><span>Recommended: portrait 4:5, at least 1080 × 1350 px</span></label>
+          </div>
+          <label class="rights"><input name="rights" type="checkbox" required> I confirm that IFCM has permission to publish this poster and event information on its website and social channels.</label>
+          <button type="submit">Send for IFCM approval <span>↗</span></button>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+
+      <aside class="live-preview">
+        <p class="section-label">Live preview</p>
+        <div class="poster-preview"><span>Poster preview</span></div>
+        <div class="preview-copy"><small>DRAFT EVENT</small><h3>Your event title</h3><p>City · Country</p></div>
+      </aside>
+    </section>
+
+    <section class="approval" id="queue">
+      <div class="approval-heading"><div><p class="section-label">IFCM editorial desk</p><h2>Approval queue</h2></div><div class="queue-stats"><span><strong class="pending-count">0</strong> Pending</span><span><strong class="approved-count">0</strong> Approved</span></div></div>
+      <div class="queue-list"></div>
+    </section>
+
+    <section class="social-preview">
+      <div><p class="section-label">Channel preview</p><h2>See it before<br>the world does.</h2><p>The approved event can have a concise Facebook version and a visual Instagram version, while keeping the same verified source information.</p></div>
+      <div class="channel-cards">
+        <article class="facebook-card"><header><b>f</b><span><strong>IFCM</strong><small>Just now · Public</small></span></header><div class="social-image"></div><p class="social-caption">An approved event preview will appear here.</p><footer>Like &nbsp; Comment &nbsp; Share</footer></article>
+        <article class="instagram-card"><header><b>◎</b><strong>ifcmofficial</strong><i>•••</i></header><div class="social-image"></div><p><strong>ifcmofficial</strong> <span class="social-caption">An approved event preview will appear here.</span></p><footer>♡　⌁　➤</footer></article>
+      </div>
+    </section>
+
+    <section class="integration" id="integration">
+      <div><p class="section-label">Production connection</p><h2>What activates<br>real publishing?</h2></div>
+      <div class="integration-list">
+        <article><span>1</span><div><strong>IFCM administrator login</strong><p>Only authorised editors can approve, schedule or retry posts.</p></div></article>
+        <article><span>2</span><div><strong>Meta app and permissions</strong><p>A Page access token and approved Facebook/Instagram publishing permissions.</p></div></article>
+        <article><span>3</span><div><strong>Professional Instagram account</strong><p>The IFCM Instagram professional account must be correctly connected to its Facebook Page.</p></div></article>
+        <article><span>4</span><div><strong>Secure server workflow</strong><p>Store tokens outside the browser, publish through server functions and keep an audit log.</p></div></article>
+        <article><span>5</span><div><strong>Retries and moderation</strong><p>Failed posts remain visible to administrators and can be safely retried.</p></div></article>
+      </div>
+      <p class="integration-note">This prototype simulates publishing locally. It never requests or stores Facebook, Instagram or payment credentials.</p>
+    </section>
+  </main>
+
+  <button class="share-launcher" type="button" aria-expanded="false" aria-controls="share-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="2.5"></circle><circle cx="6" cy="12" r="2.5"></circle><circle cx="18" cy="19" r="2.5"></circle><path d="M8.2 10.8l7.6-4.5M8.2 13.2l7.6 4.5"></path></svg><strong>Share</strong></button>
+  <div class="share-panel" id="share-panel" aria-hidden="true">
+    <strong>Share Event Studio</strong>
+    <button type="button" data-share="native">More apps, including Instagram</button>
+    <a data-share-link="facebook" target="_blank" rel="noreferrer">Facebook</a>
+    <a data-share-link="linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+    <a data-share-link="whatsapp" target="_blank" rel="noreferrer">WhatsApp</a>
+    <a data-share-link="x" target="_blank" rel="noreferrer">X</a>
+    <a data-share-link="email">Email</a>
+    <button type="button" data-share="copy">Copy link</button>
+    <small class="share-status"></small>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
