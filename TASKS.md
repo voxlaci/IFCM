@@ -6,7 +6,7 @@ Last reviewed: 23 June 2026
 
 - [x] Establish `voxlaci/IFCM` as the principal repository.
 - [x] Create the initial local Git history.
-- [ ] Authenticate GitHub CLI and push the initial commits to `main`.
+- [x] Authenticate GitHub CLI and push the initial commits to `main`.
 - [ ] Connect the GitHub repository to Cloudflare Pages.
 - [ ] Confirm the public `pages.dev` address.
 - [ ] Add a custom domain or subdomain when selected.
@@ -109,4 +109,3 @@ Last reviewed: 23 June 2026
 - Update this task list whenever a task is completed or reprioritised.
 - Never commit passwords, access tokens, member databases or private personal data.
 - Keep `main` deployable; use feature branches for risky or incomplete work.
-
