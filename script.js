@@ -54,7 +54,7 @@ function renderActivities() {
     </article>`).join("") : `<p class="activity-empty">No activities match this search.</p>`;
   document.querySelectorAll("[data-event-title]").forEach((button) => button.addEventListener("click", () => {
     const item = activityData.find((event) => event.title === button.dataset.eventTitle);
-    if (item) openDetail(item.type.toUpperCase(), item.title, `${item.place} · ${item.range}`, item.description || "Full organiser information, programme, accessibility, participation conditions and approved contact details would appear here inside IFCM.");
+    if (item) openDetail(item.type.toUpperCase(), item.title, `${item.place} · ${item.range}`, item.description || "Full organiser information, programme, accessibility, participation conditions and approved contact details would appear here inside a future platform.");
   }));
 }
 calendarSearch.addEventListener("input", renderActivities);
@@ -67,7 +67,7 @@ document.querySelectorAll("[data-calendar-filter]").forEach((button) => button.a
 renderActivities();
 
 const directoryData = [
-  { name: "International Federation for Choral Music", country: "International", city: "Global", region: "Oceania", type: "Federation" },
+  { name: "Future IFCM concept hub", country: "International", city: "Global", region: "Oceania", type: "Independent prototype reference" },
   { name: "American Choral Directors Association", country: "United States", city: "Oklahoma City", region: "Americas", type: "National organisation" },
   { name: "A Cœur Joie International", country: "France", city: "Lyon", region: "Europe", type: "International organisation" },
   { name: "Asia Pacific Choral Council", country: "Asia-Pacific", city: "Regional network", region: "Asia", type: "Regional organisation" },
@@ -306,24 +306,24 @@ officialAmbassadorArchive.trim().split("\n").forEach((row, index) => {
 });
 
 const organisationPinData = [
-  {name:"American Choral Directors Association",country:"United States",lat:35.5,lon:-97.5,status:"IFCM founding organisation",url:"https://acda.org/"},
-  {name:"A Cœur Joie International",country:"France",lat:45.8,lon:4.8,status:"IFCM founding organisation",url:"https://www.choralies.org/"},
-  {name:"Japan Choral Association",country:"Japan",lat:35.7,lon:139.7,status:"IFCM founding organisation",url:"https://jcanet.or.jp/"},
-  {name:"Nordisk Korforum",country:"Nordic region",lat:59.3,lon:18.1,status:"IFCM founding organisation",url:"https://nordiskkorforum.org/"},
+  {name:"American Choral Directors Association",country:"United States",lat:35.5,lon:-97.5,status:"Public organisation reference",url:"https://acda.org/"},
+  {name:"A Cœur Joie International",country:"France",lat:45.8,lon:4.8,status:"Public organisation reference",url:"https://www.choralies.org/"},
+  {name:"Japan Choral Association",country:"Japan",lat:35.7,lon:139.7,status:"Public organisation reference",url:"https://jcanet.or.jp/"},
+  {name:"Nordisk Korforum",country:"Nordic region",lat:59.3,lon:18.1,status:"Public organisation reference",url:"https://nordiskkorforum.org/"},
   {name:"Asociación Interamericana de Directores de Coros",country:"Venezuela",lat:10.5,lon:-66.9,status:"International choral network",url:"https://www.ifcm.net/about-us/structure"},
   {name:"African Confederation for Choral Music",country:"Africa",lat:0.5,lon:20,status:"Regional choral network",url:"https://www.ifcm.net/service/access-to-members-database"},
   {name:"Asia Pacific Choral Council",country:"Asia-Pacific",lat:14.6,lon:121,status:"Regional choral network",url:"https://www.ifcm.net/service/access-to-members-database"}
 ];
 
 const ifcmPeopleData = [
-  {name:"Michael J. Anderson",country:"United States",lat:40,lon:-100,status:"IFCM Honorary Member"},
-  {name:"Lore Auerbach",country:"Germany",lat:51,lon:10,status:"IFCM Honorary Member"},
-  {name:"Alberto Grau",country:"Venezuela",lat:10.5,lon:-66.9,status:"IFCM Honorary Member · Lifetime Achievement Award"},
-  {name:"María Guinand",country:"Venezuela",lat:10.7,lon:-67.2,status:"IFCM Honorary Member · Lifetime Achievement Award"},
-  {name:"Lupwishi Mbuyamba",country:"Mozambique",lat:-25.9,lon:32.6,status:"IFCM Honorary Member"},
-  {name:"Noël Minet",country:"Belgium",lat:50.8,lon:4.4,status:"IFCM Honorary Member"},
-  {name:"Royce Saltzman",country:"United States",lat:44,lon:-123,status:"IFCM Honorary Member · Lifetime Achievement Award"},
-  {name:"Jutta Tagger",country:"France",lat:48.9,lon:2.3,status:"IFCM Honorary Member · Lifetime Achievement Award"}
+  {name:"Michael J. Anderson",country:"United States",lat:40,lon:-100,status:"Public people reference"},
+  {name:"Lore Auerbach",country:"Germany",lat:51,lon:10,status:"Public people reference"},
+  {name:"Alberto Grau",country:"Venezuela",lat:10.5,lon:-66.9,status:"Public people reference"},
+  {name:"María Guinand",country:"Venezuela",lat:10.7,lon:-67.2,status:"Public people reference"},
+  {name:"Lupwishi Mbuyamba",country:"Mozambique",lat:-25.9,lon:32.6,status:"Public people reference"},
+  {name:"Noël Minet",country:"Belgium",lat:50.8,lon:4.4,status:"Public people reference"},
+  {name:"Royce Saltzman",country:"United States",lat:44,lon:-123,status:"Public people reference"},
+  {name:"Jutta Tagger",country:"France",lat:48.9,lon:2.3,status:"Public people reference"}
 ];
 
 const globalChoirData = [
@@ -362,7 +362,7 @@ function initialiseAmbassadorGlobe() {
   ];
   pinsLayer.innerHTML = globePoints.map((item,index)=>`<button class="ambassador-pin ${item.kind}-pin" type="button" data-point="${index}" aria-label="${item.name}, ${item.country}"></button>`).join("");
   const alphabeticalAmbassadors = [...ambassadorData].sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base" }) || b.year.localeCompare(a.year));
-  document.querySelector(".ambassador-marquee").innerHTML = alphabeticalAmbassadors.map((item)=>`<article class="ambassador-mini" translate="no"><span>${item.country} · WSCM ${item.year}</span><strong>${item.name}</strong><small>IFCM Ambassador</small><a href="${item.url || webResearchUrl(`${item.name} choir ${item.country}`)}" target="_blank" rel="noreferrer" aria-label="Open ${item.name}">↗</a></article>`).join("");
+  document.querySelector(".ambassador-marquee").innerHTML = alphabeticalAmbassadors.map((item)=>`<article class="ambassador-mini" translate="no"><span>${item.country} · WSCM ${item.year}</span><strong>${item.name}</strong><small>Public choral reference</small><a href="${item.url || webResearchUrl(`${item.name} choir ${item.country}`)}" target="_blank" rel="noreferrer" aria-label="Open ${item.name}">↗</a></article>`).join("");
   document.querySelector(".symposium-rail").innerHTML = symposiumData.map((item)=>`<article><span>WSCM ${item.year}</span><strong>${item.name}</strong><small>${item.country}</small><a href="${webResearchUrl(`World Symposium on Choral Music ${item.year} ${item.name}`)}" target="_blank" rel="noreferrer">Symposium more info ↗</a></article>`).join("");
   let angle = 8;
   let running = true;
@@ -370,8 +370,8 @@ function initialiseAmbassadorGlobe() {
   function selectPoint(index) {
     const item = globePoints[index];
     document.querySelector(".ambassador-name").textContent = item.name;
-    const label = {person:"IFCM PEOPLE",symposium:"WORLD SYMPOSIUM",organisation:"IFCM ORGANISATION",ambassador:"IFCM AMBASSADOR CHOIR",choir:"GLOBAL CHOIR"}[item.kind];
-    const detail = item.kind === "symposium" ? `${item.country} · World Symposium ${item.year}` : item.kind === "ambassador" ? `${item.country} · IFCM Ambassador · WSCM ${item.year}` : `${item.country} · ${item.status}`;
+    const label = {person:"PUBLIC PEOPLE REFERENCE",symposium:"SYMPOSIUM REFERENCE",organisation:"PUBLIC ORGANISATION",ambassador:"PUBLIC CHORAL REFERENCE",choir:"GLOBAL CHOIR"}[item.kind];
+    const detail = item.kind === "symposium" ? `${item.country} · Symposium reference ${item.year}` : item.kind === "ambassador" ? `${item.country} · Public choral reference · WSCM ${item.year}` : `${item.country} · ${item.status}`;
     document.querySelector(".ambassador-location").textContent = detail;
     document.querySelector(".ambassador-card > span").textContent = label;
     document.querySelector(".ambassador-link").dataset.detailIndex = String(index);
@@ -382,10 +382,10 @@ function initialiseAmbassadorGlobe() {
     const item = globePoints[Number(event.currentTarget.dataset.detailIndex || 0)];
     const query = item.kind === "symposium" ? `World Symposium on Choral Music ${item.year} ${item.name}` : ["ambassador","choir"].includes(item.kind) ? `${item.name} choir ${item.country}` : `${item.name} IFCM`;
     openDetail(
-      item.kind === "symposium" ? `WSCM ${item.year}` : item.kind === "choir" ? "GLOBAL CHOIR" : item.kind === "organisation" ? "IFCM ORGANISATION" : item.kind === "person" ? "IFCM PEOPLE" : "IFCM AMBASSADOR",
+      item.kind === "symposium" ? `WSCM ${item.year}` : item.kind === "choir" ? "GLOBAL CHOIR" : item.kind === "organisation" ? "PUBLIC ORGANISATION" : item.kind === "person" ? "PUBLIC PEOPLE REFERENCE" : "PUBLIC CHORAL REFERENCE",
       item.name,
       item.country,
-      item.kind === "symposium" ? "A global meeting for performances, seminars, workshops, exhibitions, reading sessions and international exchange." : item.kind === "ambassador" ? "A publicly recognised choir connected to an IFCM World Symposium." : item.kind === "choir" ? "A choir included to broaden discovery across the worldwide choral community. Its presence on this prototype does not imply IFCM membership or affiliation." : item.kind === "organisation" ? "A public organisation connected to the IFCM network. Open its website or the official IFCM source for more information." : "A person publicly listed by IFCM as an Honorary Member, with the status shown above. IFCM’s public page is the source for this prototype.",
+      item.kind === "symposium" ? "A public symposium reference used to demonstrate how major choral gatherings could be explored in a future platform." : item.kind === "ambassador" ? "A public choral reference used to demonstrate how choirs could appear in a future global directory. Verify official status at source." : item.kind === "choir" ? "A choir included to broaden discovery across the worldwide choral community. Its presence on this prototype does not imply IFCM membership or affiliation." : item.kind === "organisation" ? "A public organisation reference. Open its own website or an official source for verified information." : "A public people reference used to demonstrate a possible memory and discovery layer. Verify official status at source.",
       item.url,
       query
     );
@@ -424,8 +424,8 @@ function renderDirectory() {
     const matchesQuery = [item.name, item.country, item.city, item.type].join(" ").toLowerCase().includes(query);
     return matchesQuery && (region === "all" || item.region === region);
   }).sort((a, b) => {
-    if (a.name === "International Federation for Choral Music") return -1;
-    if (b.name === "International Federation for Choral Music") return 1;
+    if (a.name === "Future IFCM concept hub") return -1;
+    if (b.name === "Future IFCM concept hub") return 1;
     return a.name.localeCompare(b.name, "en", { sensitivity: "base" });
   });
   document.querySelector(".directory-count").textContent = `${filtered.length} public records`;
@@ -468,8 +468,8 @@ document.querySelector(".ai-demo").addEventListener("submit", async (event) => {
   const question = document.querySelector("#ai-question").value.trim();
   if (!question) return;
   const answer = document.querySelector(".ai-answer");
-  answer.innerHTML = "<strong>IFCM AI</strong><br>Consulting the prototype and public online sources…";
-  answer.innerHTML = `<strong>IFCM AI</strong><br>${await buildConnectedAnswer(question)}`;
+  answer.innerHTML = "<strong>Future IFCM AI</strong><br>Consulting the prototype and public online sources…";
+  answer.innerHTML = `<strong>Future IFCM AI</strong><br>${await buildConnectedAnswer(question)}`;
 });
 
 document.querySelectorAll("[data-scroll-rail]").forEach((button) => button.addEventListener("click", () => {
@@ -519,7 +519,7 @@ document.querySelectorAll("[data-open-form]").forEach((button) => button.addEven
   const advertising = button.dataset.openForm === "advertise";
   const legacy = button.dataset.openForm === "legacy";
   requestModal.querySelector(".request-kicker").textContent = legacy ? "THE NEXT VOICE" : advertising ? "ADVERTISING" : "PARTNERSHIP";
-  requestModal.querySelector(".request-title").textContent = legacy ? "Gift three years of membership" : advertising ? "Request advertising options" : "Become an IFCM Partner";
+  requestModal.querySelector(".request-title").textContent = legacy ? "Gift three years of membership" : advertising ? "Request advertising options" : "Become a partner in this mission";
   requestModal.querySelector('input[name="organisation"]').placeholder = legacy ? "Your name or member organisation" : "Organisation";
   requestModal.querySelector('textarea[name="request"]').placeholder = legacy ? "Who would you like to support, and why?" : "Tell us what you would like to achieve";
   requestModal.classList.add("open");
@@ -531,17 +531,17 @@ document.querySelector(".request-close").addEventListener("click", () => {
 });
 document.querySelector(".request-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  event.currentTarget.querySelector(".request-status").textContent = "Request prepared. The production site would send it to the authorised IFCM team and open a secure checkout when relevant.";
+  event.currentTarget.querySelector(".request-status").textContent = "Request prepared. A production version would send it to an authorised editorial team and open a secure checkout when relevant.";
 });
 
 document.querySelector(".newsletter-form").addEventListener("submit", (event) => {
   event.preventDefault();
-  document.querySelector(".newsletter-note").textContent = "Thank you. This demonstration is ready to connect to the official IFCM mailing platform.";
+  document.querySelector(".newsletter-note").textContent = "Thank you. This is a demonstration form for the independent concept prototype.";
   event.currentTarget.reset();
 });
 
 const conciergeCopy = {
-  en: { hello: "Welcome. Ask me about a symposium, choir, country, event, membership, media, contacts or an IFCM project. If this prototype does not hold enough verified detail, I will offer a focused external research link.", member: "Every member is an ambassador. Membership can include the directory, recordings, publications, international contacts, projects, opportunities and participation. You can start the three-step prototype process in the Membership section.", project: "IFCM projects include the World Symposium on Choral Music, World Choral Day, YOUNG Programme, Conductors Beyond Borders, World Choral Expo and the Choral Composition Competition.", nearby: "The Global Calendar can be searched by destination, year and event type. For local recommendations, tell me a city or country and I will prepare a focused current web search.", fallback: "I do not want to invent an answer. This prototype can still help: use the research link below to look for current, public information about your exact question." },
+  en: { hello: "Welcome. Ask me about a symposium, choir, country, event, membership, media, contacts or future choral platform idea. If this prototype does not hold enough verified detail, I will offer a focused external research link.", member: "Every member can be an ambassador. This prototype imagines a membership service with an opt-in directory, recordings, publications, international contacts, projects, opportunities and participation.", project: "This prototype points to official IFCM projects through external links instead of reproducing official content. Use it as a navigation and discussion layer, not as an official record.", nearby: "The Global Calendar concept can be searched by destination, year and event type. For local recommendations, tell me a city or country and I will prepare a focused current web search.", fallback: "I do not want to invent an answer. This prototype can still help: use the research link below to look for current, public information about your exact question." },
   pt: { hello: "Bem-vindo. Pergunte-me sobre um simpósio, coro, país, evento, adesão, media, contactos ou projeto do IFCM. Se o protótipo não tiver detalhe verificado suficiente, ofereço uma pesquisa externa focada.", member: "Cada membro é um embaixador. A adesão pode incluir diretório, gravações, publicações, contactos internacionais, projetos, oportunidades e participação. Pode iniciar o processo de três etapas na secção Membership.", project: "Os projetos incluem World Symposium on Choral Music, World Choral Day, YOUNG Programme, Conductors Beyond Borders, World Choral Expo e o Concurso de Composição Coral.", nearby: "O Calendário Global pode ser pesquisado por destino, ano e tipo. Diga-me uma cidade ou país e prepararei uma pesquisa atual e focada.", fallback: "Não quero inventar uma resposta. Este protótipo pode ainda ajudar: use a ligação de pesquisa abaixo para procurar informação pública e atual sobre a sua pergunta exata." },
   fr: { hello: "Bienvenue. Interrogez-moi sur un symposium, un chœur, un pays, un événement, l’adhésion, les médias, les contacts ou un projet IFCM. Si le prototype manque de détails vérifiés, je proposerai une recherche externe ciblée.", member: "Chaque membre est un ambassadeur. L’adhésion peut inclure annuaire, enregistrements, publications, contacts, projets, possibilités et participation.", project: "Les projets comprennent le Symposium mondial, la Journée mondiale du chant choral, YOUNG, Conductors Beyond Borders, World Choral Expo et le concours de composition.", nearby: "Le calendrier mondial permet une recherche par destination, année et type. Indiquez une ville ou un pays pour une recherche actuelle ciblée.", fallback: "Je préfère ne pas inventer de réponse. Utilisez le lien ci-dessous pour rechercher des informations publiques et actuelles sur votre question précise." },
   es: { hello: "Bienvenido. Pregúntame sobre un simposio, coro, país, evento, membresía, medios, contactos o proyecto de la IFCM. Si faltan detalles verificados, ofreceré una búsqueda externa específica.", member: "Cada miembro es un embajador. La membresía puede incluir directorio, grabaciones, publicaciones, contactos, proyectos, oportunidades y participación.", project: "Los proyectos incluyen el Simposio Mundial, el Día Mundial del Canto Coral, YOUNG, Conductors Beyond Borders, World Choral Expo y el concurso de composición.", nearby: "El Calendario Global permite buscar por destino, año y tipo. Indica una ciudad o país para preparar una búsqueda actual.", fallback: "Prefiero no inventar una respuesta. Utiliza el enlace inferior para buscar información pública y actual sobre tu pregunta exacta." },
@@ -574,12 +574,12 @@ function conciergeAnswer(question) {
     const destination = choir.url || webResearchUrl(`${choir.name} choir ${choir.country}`);
     return `${choir.name} is listed in this prototype as an IFCM Ambassador connected with WSCM ${choir.year}. It is based in ${choir.country}. <a href="${destination}" target="_blank" rel="noreferrer">${choir.url ? "Open the choir’s public website" : "Research this choir online"} ↗</a>`;
   }
-  if (/history|história|histoire|historia|历史|1982/.test(text)) return `IFCM was founded in 1982 after major choral organisations met in Namur, Belgium, to make international communication and exchange possible. Its history includes world symposia, the World Youth Choir, World Choral Day, publications and cooperation. <a href="${webResearchUrl("IFCM history International Federation for Choral Music")}" target="_blank" rel="noreferrer">Research IFCM history ↗</a>`;
+  if (/history|história|histoire|historia|历史|1982/.test(text)) return `This independent prototype does not reproduce official institutional history. For verified history and institutional information, please use the official IFCM website. <a href="https://www.ifcm.net/" target="_blank" rel="noreferrer">Open official IFCM website ↗</a>`;
   if (/login|log in|sign in|entrar|connexion|iniciar sesión|登录/.test(text)) return `The official members login is managed by IFCM. <a href="https://www.ifcm.net/#login" target="_blank" rel="noreferrer">Open the official IFCM Login Portal ↗</a>`;
   if (/board|president|leadership|direção|dirección|président|honorary|honorário|荣誉/.test(text)) return `The globe shows people whose public IFCM status can be verified, including Honorary Members and Lifetime Achievement recipients. The official site does not currently expose a complete text list of all former presidents and board members, so this prototype does not invent those roles. <a href="https://www.ifcm.net/about-us/people" target="_blank" rel="noreferrer">Open the official IFCM People page ↗</a>`;
   if (/database|directory|member list|base de dados|directorio|annuaire|数据库/.test(text)) return `Protected member information belongs in the official IFCM members area. <a href="https://www.ifcm.net/service/access-to-members-database" target="_blank" rel="noreferrer">Open the official Members Database information ↗</a>`;
-  if (/contact|office|email|contacto|contato|bureau|联系/.test(text)) return `IFCM’s administrative office is listed in Austin, United States, and its main office in Lisbon, Portugal. General contact: <a href="mailto:office@ifcm.net">office@ifcm.net</a>. Editorial contact: <a href="mailto:communication@ifcm.net">communication@ifcm.net</a>.`;
-  if (/media|video|youtube|recording|grava|podcast|媒体/.test(text)) return `The Media area brings together IFCM videos, Online Cafés, performances, interviews and future member recordings. <a href="#media">Open the IFCM Media area →</a>`;
+  if (/contact|office|email|contacto|contato|bureau|联系/.test(text)) return `For official contacts, please use the official IFCM website. This prototype deliberately avoids reproducing institutional contact records. <a href="https://www.ifcm.net/" target="_blank" rel="noreferrer">Open official IFCM website ↗</a>`;
+  if (/media|video|youtube|recording|grava|podcast|媒体/.test(text)) return `The Media area shows how a future digital community could organise video, recordings, interviews and learning resources, with links to official external channels when needed. <a href="#media">Open the concept media area →</a>`;
   if (/job|opportun|grant|residen|vaga|bolsa|empleo|机会/.test(text)) return `The prototype proposes one worldwide board for jobs, grants, residencies, calls for scores, juries and mentorship. <a href="#services">Open Member Home opportunities →</a>`;
   if (/member|membro|adhésion|membresía|会员/.test(text)) return c.member;
   if (/project|projeto|projet|项目/.test(text)) return c.project;
@@ -942,31 +942,32 @@ function applyLocalLanguage(language) {
   const lang = copy[language] ? language : "en";
   const t = copy[lang];
   document.documentElement.lang = lang === "zh" ? "zh-Hans" : lang;
-  document.title = t.title;
-  html(".concept-bar span", t.concept);
-  html(".concept-bar a", t.proposal);
-  document.querySelectorAll("#main-nav a").forEach((node, index) => node.textContent = t.nav[index]);
-  html(".hero .eyebrow", t.eyebrow); html(".hero h1", t.hero); html(".hero-intro", t.intro);
-  html(".hero-actions .button", t.see); html(".play-button", t.film); html(".live-card small", t.now); html(".live-card strong", t.oneWorld); html(".scroll-cue", t.scroll);
-  html(".manifesto > .section-label", t.visionLabel); html(".manifesto-grid h2", t.manifesto); html(".manifesto-grid .large-copy", t.future);
-  html(".manifesto-grid div p:last-child", t.commons);
-  document.querySelectorAll(".manifesto-strip span").forEach((node, index) => node.textContent = t.values[index]);
-  html(".priorities .section-label", t.movesLabel); html(".priorities .section-heading h2", t.moves); html(".priorities .section-heading > p", t.movesIntro);
+  document.title = "Future IFCM – Independent Concept Prototype";
+  const independentNav = ["Vision", "Digital Community", "Future Ideas", "Prototype", "My Proposal", "Official IFCM Website ↗"];
+  document.querySelectorAll("#main-nav a").forEach((node, index) => { if (independentNav[index]) node.textContent = independentNav[index]; });
+  html(".hero .eyebrow", "Independent future concept prototype"); html(".hero h1", t.hero); html(".hero-intro", "A personal vision prototype imagining how a global choral digital community could discover, connect, learn, participate and build what comes next.");
+  html(".hero-actions .button", 'Visit official IFCM <span>↗</span>'); html(".play-button", "<i>◎</i> Explore the connections"); html(".scroll-cue", "Discover the story <span>↓</span>");
+  html(".manifesto > .section-label", "Vision"); html(".manifesto-grid h2", "Imagine a digital home<br>for a world that <span>sings.</span>"); html(".manifesto-grid .large-copy", "This prototype asks how a worldwide choral network could feel more useful, more participatory and more alive online.");
+  html(".manifesto-grid div p:last-child", "Historical and institutional information should be checked directly on the official IFCM website. Here, official references are used only as external sources while the design, structure and service ideas remain an independent proposal.");
+  ["Independent prototype", "Digital community", "Global participation", "Creators transforming the world"].forEach((value, index) => { const node = document.querySelectorAll(".manifesto-strip span")[index]; if (node) node.textContent = value; });
+  html(".priorities .section-label", "A living global network"); html(".priorities .section-heading h2", t.moves); html(".priorities .section-heading > p", "Four practical commitments imagined for a future digital choral community: more useful, more representative and more connected.");
   document.querySelectorAll(".priority").forEach((node, index) => {
     const item = t.priorities[index];
     node.querySelector(".priority-title").textContent = item[0];
     node.querySelector(".priority-content p").textContent = item[1];
     node.querySelectorAll("li").forEach((li, liIndex) => li.textContent = item[2].split("|")[liIndex]);
   });
+  const trustCopy = document.querySelector('.priority[data-priority="4"] .priority-content p');
+  if (trustCopy) trustCopy.textContent = "Clear priorities, accessible budgets, visible decisions and regular reporting — making members partners in the future direction of the community.";
   html(".world .section-label", t.worldLabel); html(".world h2", t.worldTitle); html(".world-copy > p:not(.section-label)", t.worldText); html(".world .text-link", t.worldLink);
   document.querySelectorAll(".map-point span").forEach((node, index) => node.textContent = t.regions[index]); html(".map-stat span", t.regionStat);
   const ex = extendedCopy[lang];
   html(".global-calendar .section-label", ex.calendarLabel); html(".calendar-heading h2", ex.calendarTitle);
-  html(".directory .section-label", ex.directoryLabel); html(".directory h2", ex.directoryTitle); html(".directory-head > p", ex.directoryText); directorySearch.placeholder = ex.search;
-  html(".membership .section-label", ex.membershipLabel); html(".membership h2", ex.membershipTitle); html(".membership-intro > p:not(.section-label)", ex.membershipText); html(".membership .button", ex.joinMember);
-  html(".media-hub .section-label", ex.mediaLabel); html(".media-hub h2", ex.mediaTitle);
-  html(".product-heading h2", ex.productTitle); html(".product-heading p", ex.productText);
-  html(".platform > .section-label", t.digital); document.querySelectorAll(".dashboard aside button").forEach((node, index) => node.textContent = t.aside[index]);
+  html(".directory .section-label", ex.directoryLabel); html(".directory h2", ex.directoryTitle); html(".directory-head > p", "This public prototype begins with public organisations, projects and choirs as examples. Protected member information would only appear with permission and proper authorisation."); directorySearch.placeholder = ex.search;
+  html(".membership .section-label", "Future membership services"); html(".membership h2", ex.membershipTitle); html(".membership-intro > p:not(.section-label)", "Every member can be an ambassador. This prototype imagines membership as a useful digital service: people, opportunities, knowledge, recordings and participation in one place."); html(".membership .button", 'View official membership information <span>↗</span>');
+  html(".media-hub .section-label", ex.mediaLabel); html(".media-hub h2", "A digital community<br>should always feel <em>alive.</em>");
+  html(".product-heading h2", "Not a mock-up.<br>A weekly <em>habit.</em>"); html(".product-heading p", "A glimpse of what a logged-in member could experience: relevant information, real people and useful actions in one calm space.");
+  html(".platform > .section-label", t.digital); ["For you", "Calendar", "Network", "Opportunities", "Future IFCM AI"].forEach((value, index) => { const node = document.querySelectorAll(".dashboard aside button")[index]; if (node) node.textContent = value; });
   html(".welcome small", t.morning); html(".welcome h3", t.dashboardTitle); html(".feature small", t.live); html(".feature strong", t.conductor);
   html(".dash-card.coral small", t.connections); html(".dash-card.coral strong", t.people); html(".dash-card.coral span", t.meet);
   html(".dash-card.light small", t.calls); html(".dash-card.light strong", t.opportunities); html(".dash-card.light span", t.explore);
@@ -974,7 +975,9 @@ function applyLocalLanguage(language) {
   html(".join .section-label", t.joinLabel); html(".join h2", t.joinTitle);
   document.querySelectorAll(".voice-form label > span").forEach((node, index) => node.textContent = t.labels[index]);
   document.querySelectorAll(".voice-form input, .voice-form textarea").forEach((node, index) => node.placeholder = t.placeholders[index]);
-  html(".voice-form button", t.send); html("footer > p", t.footer); html("footer > div:last-child span", t.copyright);
+  const platformQuestion = document.querySelectorAll(".voice-form label > span")[2];
+  if (platformQuestion) platformQuestion.textContent = "What should a future global choral platform become?";
+  html(".voice-form button", t.send);
   html(".modal-inner .eyebrow", t.modalEye); html(".modal-inner h2", t.modalTitle); html(".modal-inner > p:not(.eyebrow)", t.modalText);
   languageSelect.value = lang;
   localStorage.setItem("ifcm-language", lang);
