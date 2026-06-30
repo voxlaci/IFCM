@@ -8,7 +8,8 @@ Last reviewed: 23 June 2026
 - [x] Create the initial local Git history.
 - [x] Authenticate GitHub CLI and push the initial commits to `main`.
 - [x] Connect the GitHub repository to Cloudflare Pages.
-- [x] Confirm the public `pages.dev` address: https://ifcm.pages.dev/.
+- [x] Confirm the public `pages.dev` address: https://imagineifcm.pages.dev/.
+- [x] Redirect the legacy `https://ifcm.pages.dev/` project to `https://imagineifcm.pages.dev/`.
 - [ ] Add a custom domain or subdomain when selected.
 - [ ] Verify HTTPS, redirects, caching and mobile rendering after deployment.
 

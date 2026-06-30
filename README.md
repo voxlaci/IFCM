@@ -30,7 +30,8 @@ Then open `http://127.0.0.1:8098/`.
 
 The prototype is published with Cloudflare Pages from the GitHub repository `voxlaci/IFCM`.
 
-- Public preview: <https://ifcm.pages.dev/>
+- Public preview: <https://imagineifcm.pages.dev/>
+- Legacy redirect: <https://ifcm.pages.dev/> redirects to the public preview to avoid confusion.
 - Production branch: `main`
 - Build command: none
 - Build output directory: `/`
